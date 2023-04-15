@@ -35,12 +35,15 @@ function playGame() {
                 (userHand === "ホワイトホール" && computerHand === "ブラックホール")) {
             result = "勝ち";
             wins++;
+            document.body.style.transition = "background-color 0s";
+            document.body.style.backgroundColor = "";
             document.body.style.backgroundImage = "radial-gradient(circle at center, violet, indigo, blue, green, yellow, orange, red)";
             const winSound = new Audio('win.mp3');
             winSound.play();
         } else {
             result = "負け";
             losses++;
+            document.body.style.transition = "background-color 0s";
             document.body.style.backgroundColor = "red";
             document.body.style.backgroundImage = "";
             const loseSound = new Audio('lose.mp3');
