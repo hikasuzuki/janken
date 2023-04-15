@@ -8,6 +8,10 @@
 </head>
 <body>
     <h1>じゃんけん＋</h1>
+    <p> 1. ブラックホールはグー、チョキ、パーに勝ちますが、ホワイトホールに負けます。</p>
+    <p> 2. ホワイトホールはグー、チョキ、パーに負けますが、ブラックホールに勝ちます。</p>
+    <p> 3. そのほかは、通常のじゃんけんと同じルールです。</p>
+
     <div class="buttons">
         <button onclick="selectHand('グー')">グー</button>
         <button onclick="selectHand('チョキ')">チョキ</button>
@@ -16,6 +20,8 @@
         <button onclick="selectHand('ホワイトホール')">ホワイトホール</button>
     </div>
     <div id="selected-hand" class="info"></div>
+
+    <button id="hattori-sound" onclick="playGame()" style="display: none;">服部流音</button>
     <div id="computer-hand" class="info"></div>
     <div id="result" class="info"></div>
     <div id="score" class="info"></div>
