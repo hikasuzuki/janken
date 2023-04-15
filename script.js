@@ -25,6 +25,7 @@ function playGame() {
             draws++;
             document.body.style.transition = "background-color 1s";
             document.body.style.backgroundColor = "gray";
+            document.body.style.backgroundImage = "";
             const drawSound = new Audio('draw.mp3');
             drawSound.play();
         } else if ((userHand === "グー" && (computerHand === "チョキ" || computerHand === "ホワイトホール")) ||
@@ -41,6 +42,7 @@ function playGame() {
             result = "負け";
             losses++;
             document.body.style.backgroundColor = "red";
+            document.body.style.backgroundImage = "";
             const loseSound = new Audio('lose.mp3');
             loseSound.play();
         }
