@@ -8,7 +8,6 @@ let userHandsHistory = [];
 function selectHand(hand) {
   userHand = hand;
   document.getElementById("selected-hand").innerText = "選んだ手: " + userHand;
-  
   playGame();
 }
 
