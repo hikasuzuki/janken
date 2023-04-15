@@ -1,112 +1,28 @@
-const hands = ["グー", "チョキ", "パー", "ブラックホール", "ホワイトホール"];
-let userHand = null;
-let wins = 0;
-let draws = 0;
-let losses = 0;
-let userHandsHistory = [];
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>じゃんけん＋</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>じゃんけん＋</h1>
 
-function selectHand(hand) {
-  userHand = hand;
-  document.getElementById("selected-hand").innerText = "選んだ手: " + userHand;
-  
-  playGame();
-}
+    <div class="buttons">
+        <button onclick="selectHand('グー')">グー</button>
+        <button onclick="selectHand('チョキ')">チョキ</button>
+        <button onclick="selectHand('パー')">パー</button> <br>
+        <button onclick="selectHand('ブラックホール')">ブラックホール</button>
+        <button onclick="selectHand('ホワイトホール')">ホワイトホール</button>
+    </div>
+    <div id="selected-hand" class="info"></div>
 
-function playGame() {
-  const drumrollSound = new Audio('drumroll.mov');
-  drumrollSound.play();
-  setTimeout(() => {
-    const computerHand = hands[Math.floor(Math.random() * hands.length)];
-    document.getElementById("computer-hand").innerText = "コンピュータの手: " + computerHand;
-    
-    let result = "";
-        if (userHand === computerHand) {
-            result = "あいこ";
-            draws++;
-            document.body.style.backgroundColor = "gray";
-            const drawSound = new Audio('draw.mp3');
-            drawSound.play();
-        } else if ((userHand === "グー" && (computerHand === "チョキ" || computerHand === "ホワイトホール")) ||
-                (userHand === "チョキ" && (computerHand === "パー" || computerHand === "ホワイトホール")) ||
-                (userHand === "パー" && (computerHand === "グー" || computerHand === "ホワイトホール")) ||
-                (userHand === "ブラックホール" && (computerHand === "グー" || computerHand === "チョキ" || computerHand === "パー")) ||
-                (userHand === "ホワイトホール" && computerHand === "ブラックホール")) {
-            result = "勝ち";
-            wins++;
-            document.body.style.backgroundColor = "limegreen";
-            const winSound = new Audio('win.mp3');
-            winSound.play();
-        } else {
-            result = "負け";
-            losses++;
-            document.body.style.backgroundColor = "red";
-            const loseSound = new Audio('lose.mp3');
-            loseSound.play();
-        }
+    <button id="hattori-sound" onclick="playGame()" style="display: none;">服部流音</button>
+    <div id="computer-hand" class="info"></div>
+    <div id="result" class="info"></div>
+    <div id="score" class="info"></div>
+    <script src="script.js"></script>
 
-        document.getElementById("result").innerText = "対戦結果: " + result;
-        document.getElementById("score").innerText = "勝ち：" + wins + "回 あいこ：" + draws + "回 負け：" + losses + "回";
-        userHandsHistory.push(userHand);
-    }, 1000);
-}
-
-// ボタンクリック時のイベントリスナーを設定
-hands.forEach(hand => {
-  document.getElementById(hand).addEventListener("click", () => selectHand(hand));
-});
-const hands = ["グー", "チョキ", "パー", "ブラックホール", "ホワイトホール"];
-let userHand = null;
-let wins = 0;
-let draws = 0;
-let losses = 0;
-let userHandsHistory = [];
-
-function selectHand(hand) {
-  userHand = hand;
-  document.getElementById("selected-hand").innerText = "選んだ手: " + userHand;
-  
-  playGame();
-}
-
-function playGame() {
-  const drumrollSound = new Audio('drumroll.mov');
-  drumrollSound.play();
-  setTimeout(() => {
-    const computerHand = hands[Math.floor(Math.random() * hands.length)];
-    document.getElementById("computer-hand").innerText = "コンピュータの手: " + computerHand;
-    
-    let result = "";
-        if (userHand === computerHand) {
-            result = "あいこ";
-            draws++;
-            document.body.style.backgroundColor = "gray";
-            const drawSound = new Audio('draw.mp3');
-            drawSound.play();
-        } else if ((userHand === "グー" && (computerHand === "チョキ" || computerHand === "ホワイトホール")) ||
-                (userHand === "チョキ" && (computerHand === "パー" || computerHand === "ホワイトホール")) ||
-                (userHand === "パー" && (computerHand === "グー" || computerHand === "ホワイトホール")) ||
-                (userHand === "ブラックホール" && (computerHand === "グー" || computerHand === "チョキ" || computerHand === "パー")) ||
-                (userHand === "ホワイトホール" && computerHand === "ブラックホール")) {
-            result = "勝ち";
-            wins++;
-            document.body.style.backgroundColor = "limegreen";
-            const winSound = new Audio('win.mp3');
-            winSound.play();
-        } else {
-            result = "負け";
-            losses++;
-            document.body.style.backgroundColor = "red";
-            const loseSound = new Audio('lose.mp3');
-            loseSound.play();
-        }
-
-        document.getElementById("result").innerText = "対戦結果: " + result;
-        document.getElementById("score").innerText = "勝ち：" + wins + "回 あいこ：" + draws + "回 負け：" + losses + "回";
-        userHandsHistory.push(userHand);
-    }, 1000);
-}
-
-// ボタンクリック時のイベントリスナーを設定
-hands.forEach(hand => {
-  document.getElementById(hand).addEventListener("click", () => selectHand(hand));
-});
+</body>
+</html>
