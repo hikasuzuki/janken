@@ -1,68 +1,30 @@
 body {
-    font-family: 'Arial Black', Arial, sans-serif;
-    text-align: center;
-    background-color: white;
-    transition: background-color 1s;
+    font-family: Arial, sans-serif;
 }
 
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.color-palette-container {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
 }
 
-.buttons button {
-    margin: 0.5rem;
-    padding: 1rem 2rem;
-    font-size: 1.5rem;
-    border-radius: 10px;
+.hue-slider {
+    margin-right: 1rem;
+}
+
+.color-palette {
+    display: grid;
+    grid-template-columns: repeat(30, 1fr);
+    grid-gap: 20px;
+    width: 200px;
+}
+
+.color-box {
+    width: 30px;
+    height: 30px;
     cursor: pointer;
-    transition: transform 0.3s;
 }
 
-.buttons button:hover {
-    transform: scale(1.1);
-}
-
-.buttons button:nth-child(1) {
-    background-color: brown;
-    color: white;
-}
-
-.buttons button:nth-child(2) {
-    background-color: orange;
-    color: white;
-}
-
-.buttons button:nth-child(3) {
-    background-color: blue;
-    color: white;
-}
-
-.buttons button:nth-child(4) {
-    background-color: black;
-    color: white;
-}
-
-.buttons button:nth-child(5) {
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-    color: white;
-}
-
-.info {
-    margin: 1rem;
-    font-size: 1.2rem;
-}
-
-#hattori-sound {
-    background-color: purple;
-    color: white;
-    padding: 1rem 2rem;
-    font-size: 1.5rem;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-#hattori-sound:hover {
-    transform: scale(1.1);
+.content {
+    padding: 1rem;
 }
