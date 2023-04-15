@@ -8,12 +8,13 @@ let userHandsHistory = [];
 function selectHand(hand) {
   userHand = hand;
   document.getElementById("selected-hand").innerText = "選んだ手: " + userHand;
+  
   playGame();
 }
 
 function playGame() {
   const drumrollSound = new Audio('drumroll.mov');
-  drumrollSound.play();
+  drumrollSound.play().catch(error => console.error('Error:', error));
   setTimeout(() => {
     const computerHand = hands[Math.floor(Math.random() * hands.length)];
     document.getElementById("computer-hand").innerText = "コンピュータの手: " + computerHand;
