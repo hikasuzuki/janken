@@ -23,6 +23,7 @@ function playGame() {
         if (userHand === computerHand) {
             result = "あいこ";
             draws++;
+            document.body.style.transition = "background-color 1s";
             document.body.style.backgroundColor = "gray";
             const drawSound = new Audio('draw.mp3');
             drawSound.play();
@@ -33,14 +34,14 @@ function playGame() {
                 (userHand === "ホワイトホール" && computerHand === "ブラックホール")) {
             result = "勝ち";
             wins++;
-            document.body.style.backgroundColor = "limegreen";
+            document.body.style.backgroundImage = "radial-gradient(circle at center, violet, indigo, blue, green, yellow, orange, red)";
             const winSound = new Audio('win.mp3');
             winSound.play();
         } else {
             result = "負け";
             losses++;
             document.body.style.backgroundColor = "red";
-            const loseSound = new Audio('lose2.mp3');
+            const loseSound = new Audio('lose.mp3');
             loseSound.play();
         }
 
