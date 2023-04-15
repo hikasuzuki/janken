@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>じゃんけん＋</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>じゃんけん＋</h1>
+    <p>出せる手の一覧：グー、チョキ、パー、ブラックホール、ホワイトホール</p>
+    <div class="buttons">
+        <button onclick="selectHand('グー')">グー</button>
+        <button onclick="selectHand('チョキ')">チョキ</button>
+        <button onclick="selectHand('パー')">パー</button> <br>
+        <button onclick="selectHand('ブラックホール')">ブラックホール</button>
+        <button onclick="selectHand('ホワイトホール')">ホワイトホール</button>
+    </div>
+    <div id="selected-hand" class="info"></div>
+    <button id="hattori-sound" onclick="playGame()" style="display: none;">服部流音</button>
+    <div id="computer-hand" class="info"></div>
+    <div id="result" class="info"></div>
+    <div id="score" class="info"></div>
+    <script src="script.js"></script>
+</body>
+</html>
