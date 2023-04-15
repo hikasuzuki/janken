@@ -40,7 +40,7 @@ function playGame() {
             result = "負け";
             losses++;
             document.body.style.backgroundColor = "red";
-            const loseSound = new Audio('lose.mp3');
+            const loseSound = new Audio('lose2.mp3');
             loseSound.play();
         }
 
